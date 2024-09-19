@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +15,7 @@
         </div>
 
         <div class="controls">
-            <select id="chartType" class="select">
+            <select id="chartType" class="select" onchange="updateChartType()">
                 <option value="bar">Bar</option>
                 <option value="line">Line</option>
                 <option value="pie">Pie</option>
@@ -24,16 +23,13 @@
                 <option value="radar">Radar</option>
             </select>
             <input type="text" id="labelInput" class="input" placeholder="Label">
-            <input type="number" id="dataInput" class="input" placeholder="Data">
+            <input type="number" id="dataInput" class="input" placeholder="Data" onkeydown="if (event.key === 'Enter') addData()">
             <button onclick="addData()" class="btn">Add Data</button>
-            <button onclick="updateChartType()" class="btn">Change Chart Type</button>
         </div>
 
     </div>
 
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
