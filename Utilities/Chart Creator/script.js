@@ -132,3 +132,11 @@ function updateChartType() {
 function removeData(datasetIndex, index) {
     // Do nothing
 }
+
+function clearChart() {
+  chartData.labels = [];
+  chartData.datasets.forEach(dataset => {
+    dataset.data = [];
+  });
+  myChart.update();
+}
